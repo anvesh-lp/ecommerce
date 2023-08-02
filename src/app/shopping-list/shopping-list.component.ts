@@ -13,4 +13,8 @@ export class ShoppingListComponent {
   ];
 
   protected readonly Ingredient = Ingredient;
+
+  onNewIngredient($event: Ingredient) {
+    this.ingredients.push($event);
+  }
 }
