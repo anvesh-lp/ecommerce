@@ -7,7 +7,7 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   title = 'ecommerce';
-  currentWindow: string = "";
+  currentWindow: string = "recipe";
 
   currentWindowEmitted(event: string) {
     this.currentWindow = event;
