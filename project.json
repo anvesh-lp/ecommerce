@@ -1,0 +1,93 @@
+{
+  "name": "ecommerce",
+  "$schema": "node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "generators": {},
+  "sourceRoot": "apps/ecommerce/src",
+  "prefix": "app",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "options": {
+        "outputPath": "dist/apps/ecommerce",
+        "index": "apps/ecommerce/src/index.html",
+        "main": "apps/ecommerce/src/main.ts",
+        "polyfills": [
+          "zone.js"
+        ],
+        "tsConfig": "apps/ecommerce/tsconfig.app.json",
+        "assets": [
+          "apps/ecommerce/src/favicon.ico",
+          "apps/ecommerce/src/assets"
+        ],
+        "styles": [
+          "apps/ecommerce/src/styles.css",
+          "./node_modules/bootstrap/dist/css/bootstrap.css"
+        ],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "2mb",
+              "maximumError": "5mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "6kb",
+              "maximumError": "10kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "ecommerce:build:production"
+        },
+        "development": {
+          "browserTarget": "ecommerce:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "ecommerce:build"
+      }
+    },
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "polyfills": [
+          "zone.js",
+          "zone.js/testing"
+        ],
+        "tsConfig": "apps/ecommerce/tsconfig.spec.json",
+        "assets": [
+          "apps/ecommerce/src/favicon.ico",
+          "apps/ecommerce/src/assets"
+        ],
+        "styles": [
+          "apps/ecommerce/src/styles.css"
+        ],
+        "scripts": []
+      }
+    }
+  }
+}
