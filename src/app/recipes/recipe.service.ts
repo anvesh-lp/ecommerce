@@ -1,6 +1,9 @@
 import {Recipe} from "./recipe.model";
+import {EventEmitter} from "@angular/core";
 
 export class RecipeService {
+  selectedRecipeEmit = new EventEmitter<Recipe>();
+
   private recipes: Recipe[] = [
     new Recipe(
       'Biryani',
@@ -13,6 +16,7 @@ export class RecipeService {
       'https://recipe30.com/wp-content/uploads/2023/03/chicken-Biryani.jpg'
     ),
   ];
+
 
   getRecipes() {
     return [...this.recipes];
