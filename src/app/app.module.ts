@@ -11,6 +11,7 @@ import {ShoppingEditComponent} from './shopping-list/shopping-edit/shopping-edit
 import {HeaderComponent} from './header/header.component';
 import {NgOptimizedImage} from "@angular/common";
 import {DropdownDirective} from './shared/dropdown.directive';
+import {ShoppingListService} from "./shopping-list/shoppingList.service";
 
 @NgModule({
     declarations: [
@@ -25,7 +26,7 @@ import {DropdownDirective} from './shared/dropdown.directive';
       DropdownDirective,
     ],
     imports: [BrowserModule, NgOptimizedImage],
-    providers: [],
+  providers: [ShoppingListService],
     bootstrap: [AppComponent],
 })
 export class AppModule {
