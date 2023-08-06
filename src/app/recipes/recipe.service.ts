@@ -1,15 +1,20 @@
 import {Recipe} from "./recipe.model";
-import {EventEmitter} from "@angular/core";
+import {EventEmitter, Injectable} from "@angular/core";
 import {Ingredient} from "../shared/ingredient.model";
+import {ShoppingListService} from "../shopping-list/shoppingList.service";
 
+@Injectable()
 export class RecipeService {
     selectedRecipeEmit = new EventEmitter<Recipe>();
+
 
     private recipes: Recipe[] = [
         new Recipe(
             'Biryani',
             'A spicy south Indian dish',
-            'https://norecipes.com/wp-content/uploads/2017/05/chicken-biryani-006.jpg',
+            'https://www.thespruceeats.com/thmb/XDBL9gA6A6nYWUdsRZ3QwH084rk=/1500x0/filters:no_upscale' +
+            '():max_bytes(150000):strip_icc()/SES-chicken-biryani-recipe-7367850' +
+            '-hero-A-ed211926bb0e4ca1be510695c15ce111.jpg',
             [new Ingredient("rice", 2),
                 new Ingredient("water", 2),
                 new Ingredient("ghee", 3)]
@@ -24,8 +29,14 @@ export class RecipeService {
         ),
     ];
 
+    constructor(private shoppingListService: ShoppingListService) {
+    }
 
     getRecipes() {
         return [...this.recipes];
+    }
+
+    addIngredientToShoppingList(ingredients: Ingredient[]) {
+        this.shoppingListService.addIngredientsList(ingredients)
     }
 }
