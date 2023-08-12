@@ -1,4 +1,4 @@
-<a (click)="recipeClicked()" style="cursor: pointer">
+<a [routerLink]="[index]" routerLinkActive="active" style="cursor: pointer">
   <div class="pull-left">
     <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
     <p [innerText]="recipe.description" class="list-group-item-text"></p>
