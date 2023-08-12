@@ -1,7 +1,7 @@
-import { Recipe } from "./recipe.model";
-import { EventEmitter, Injectable } from "@angular/core";
-import { Ingredient } from "../shared/ingredient.model";
-import { ShoppingListService } from "../shopping-list/shoppingList.service";
+import { Recipe } from './recipe.model';
+import { EventEmitter, Injectable } from '@angular/core';
+import { Ingredient } from '../shared/ingredient.model';
+import { ShoppingListService } from '../shopping-list/shoppingList.service';
 
 @Injectable()
 export class RecipeService {
@@ -21,13 +21,13 @@ export class RecipeService {
       ]
     ),
     new Recipe(
- "Chicken Biryani"yani',
- "A spicy south Indian dish"dish',
- "https://recipe30.com/wp-content/uploads/2023/03/chicken-Biryani.jpg".jpg',
+      'Chicken Biryaniyani',
+      'A spicy south Indian dish',
+      'https://recipe30.com/wp-content/uploads/2023/03/chicken-Biryani.jpg',
       [
-        new Ingredient("rice", 2),
-        new Ingredient("water", 2),
-        new Ingredient("chicken", 3),
+        new Ingredient('rice', 2),
+        new Ingredient('water', 2),
+        new Ingredient('chicken', 3),
       ]
     ),
   ];
