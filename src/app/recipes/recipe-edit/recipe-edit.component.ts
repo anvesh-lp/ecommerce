@@ -10,6 +10,8 @@ export class RecipeEditComponent implements OnInit {
   id: number;
   editMode = false;
 
+  ngOnInit() {}
+
   constructor(private activeRoute: ActivatedRoute) {
     this.id = +activeRoute.params['id'];
     this.activeRoute.params.subscribe((params) => {
@@ -17,6 +19,4 @@ export class RecipeEditComponent implements OnInit {
       this.editMode = params['id'] != null;
     });
   }
-
-  ngOnInit() {}
 }
