@@ -13,6 +13,7 @@ import { NgOptimizedImage } from '@angular/common';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { ShoppingListService } from './shopping-list/shoppingList.service';
 import { appRouter } from './appRouter.module';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { appRouter } from './appRouter.module';
     ShoppingEditComponent,
     HeaderComponent,
     DropdownDirective,
+    RecipeEditComponent,
   ],
   imports: [BrowserModule, NgOptimizedImage, appRouter],
   providers: [ShoppingListService],

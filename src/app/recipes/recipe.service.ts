@@ -6,15 +6,16 @@ import { ShoppingListService } from "../shopping-list/shoppingList.service";
 @Injectable()
 export class RecipeService {
   selectedRecipeEmit = new EventEmitter<Recipe>();
+
 new
     ),
-    "Chicken Biryani" ani',"A spicy south Indian dish"ish
-  ',"https://recipe30.com/wp-content/uploads/2023/03/chicken-Biryani.jpg"jpg
-  ',[
-        new Ingredi"rice"
-      ice', 2),newIngredi
-        "water" ter', 2),newIngredi
-        "chicken" ken' 3),  private recipes: Recipe[] = [
+    "Chicken Biryani" "A spicy south Indian dish""https://recipe30.com/wp-content/uploads/2023/03/chicken-Biryani.jpg",
+      [
+        new Ingredient("rice", 2),
+      new,
+      "water",
+        2 new"chicken", 3),
+          private recipes: Recipe[] = [
     new Recipe(
       "Biryani",
       "A spicy south Indian dish",
@@ -22,17 +23,19 @@ new
       "():max_bytes(150000):strip_icc()/SES-chicken-biryani-recipe-7367850"0' +
     "-hero-A-ed211926bb0e4ca1be510695c15ce111.jpg"jpg',
       [
-        new Ingredi"rice"ice', 2),
-        new Ingredi"water"ter', 2),
-        new Ingredi"ghee"hee' 3),
+        new Ingredient("rice", 2),
+        new Ingredient("water", 2),
+        new Ingredient("ghee", 3),
       ]
-  constructor(private shoppingListService: ShoppingListService) {}
-      ]
-   ),
-  ];
 
 Recipe(
+      Ingredient(,
+Ingredient(),
+      ]
+    ),
+  ];
 
+  constructor(private shoppingListService: ShoppingListService) {}
 
   getRecipes() {
     return [...this.recipes];
